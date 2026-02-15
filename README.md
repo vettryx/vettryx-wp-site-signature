@@ -7,7 +7,7 @@ Este plugin leve gerencia a identidade corporativa no rodapé dos sites de clien
 ## 🚀 Funcionalidades
 
 * **Copyright Automático:** Atualiza o ano no rodapé automaticamente a cada virada de ano (ex: 2025 -> 2026), sem necessidade de manutenção manual.
-* **Assinatura Conectada:** Exibe "Desenvolvido por: VETTRYX Tech". O nome da agência é buscado via API REST. Se a VETTRYX mudar de nome no futuro, todos os sites de clientes são atualizados automaticamente em até 24h.
+* **Assinatura Conectada:** Exibe "Desenvolvido por: VETTRYX Tech". O nome da empresa é buscado via API REST. Se a VETTRYX mudar de nome no futuro, todos os sites de clientes são atualizados automaticamente em até 24h.
 * **Cache Inteligente:** Utiliza a Transient API do WordPress para armazenar os dados por 24 horas, garantindo zero impacto na performance do site do cliente.
 
 ## 🛠️ Como Usar
@@ -24,7 +24,7 @@ Este plugin leve gerencia a identidade corporativa no rodapé dos sites de clien
 Coloque no rodapé do Elementor/Tema:
 `[vettryx_copyright]`
 
-**2. Assinatura da Agência**
+**2. Assinatura da VETTRYX**
 Coloque ao lado do copyright:
 `[vettryx_developer]`
 
