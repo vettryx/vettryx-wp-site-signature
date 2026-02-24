@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: VETTRYX Site Signature
- * Plugin URI:  https://github.com/VETTRYX-Tech/vettryx-site-signature
+ * Plugin URI:  https://github.com/VETTRYX-Tech/vettryx-wp-site-signature
  * Description: Solução de branding e copyright dinâmico para clientes VETTRYX Tech.
  * Version:     1.0.0
  * Author:      VETTRYX Tech
@@ -10,6 +10,24 @@
  */
 
 if (!defined('ABSPATH')) exit;
+
+// --- INÍCIO DA ATUALIZAÇÃO AUTOMÁTICA (GITHUB) ---
+// Carrega a biblioteca 'plugin-update-checker'
+require 'plugin-update-checker/plugin-update-checker.php';
+
+// Define o uso da classe Factory correta (v5)
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
+// Configura o verificador de atualizações
+$myUpdateChecker = PucFactory::buildUpdateChecker(
+	'https://github.com/VETTRYX-Tech/vettryx-wp-site-signature', // URL do Repositório
+	__FILE__, // Caminho completo do arquivo atual
+	'vettryx-site-signature' // Slug do plugin
+);
+
+// Permite baixar os arquivos .zip das "Releases" do GitHub (Opção recomendada)
+$myUpdateChecker->getVcsApi()->enableReleaseAssets();
+// --- FIM DA ATUALIZAÇÃO AUTOMÁTICA ---
 
 /**
  * 1. Copyright Automático
@@ -49,5 +67,5 @@ add_shortcode('vettryx_developer', function() {
     }
 
     // Retorna o link formatado (Você pode ajustar o estilo CSS inline conforme preferir)
-    return '<span class="vettryx-signature" style="font-size: 0.9em;">Desenvolvido por: <a href="' . esc_url($url_site) . '" target="_blank" rel="noopener" style="color: inherit; text-decoration: none; font-weight: bold;">' . esc_html($nome_marca) . '</a></span>';
+    return '<span class="vettryx-signature">Desenvolvido por: <a href="' . esc_url($url_site) . '" target="_blank" rel="noopener">' . esc_html($nome_marca) . '</a></span>';
 });
