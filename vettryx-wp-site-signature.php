@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: VETTRYX WP Site Signature
- * Plugin URI:  https://github.com/VETTRYX/vettryx-wp-site-signature
+ * Plugin URI:  https://github.com/vettryx/vettryx-wp-site-signature
  * Description: Solução de branding e copyright dinâmico para clientes VETTRYX Tech.
  * Version:     1.0.0
  * Author:      VETTRYX Tech
