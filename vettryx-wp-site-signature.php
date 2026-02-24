@@ -12,21 +12,23 @@
 if (!defined('ABSPATH')) exit;
 
 // --- INÍCIO DA ATUALIZAÇÃO AUTOMÁTICA (GITHUB) ---
-// Carrega a biblioteca 'plugin-update-checker'
-require 'plugin-update-checker/plugin-update-checker.php';
+// Define o caminho exato do arquivo
+$puc_file = plugin_dir_path(__FILE__) . 'plugin-update-checker/plugin-update-checker.php';
 
-// Define o uso da classe Factory correta (v5)
-use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+// Só tenta carregar se o arquivo REALMENTE existir
+if (file_exists($puc_file)) {
+    require $puc_file;
+    
+    use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 
-// Configura o verificador de atualizações
-$myUpdateChecker = PucFactory::buildUpdateChecker(
-	'https://github.com/VETTRYX-Tech/vettryx-wp-site-signature', // URL do Repositório
-	__FILE__, // Caminho completo do arquivo atual
-	'vettryx-site-signature' // Slug do plugin
-);
+    $myUpdateChecker = PucFactory::buildUpdateChecker(
+        'https://github.com/VETTRYX-Tech/vettryx-wp-site-signature',
+        __FILE__,
+        'vettryx-site-signature'
+    );
 
-// Permite baixar os arquivos .zip das "Releases" do GitHub (Opção recomendada)
-$myUpdateChecker->getVcsApi()->enableReleaseAssets();
+    $myUpdateChecker->getVcsApi()->enableReleaseAssets();
+}
 // --- FIM DA ATUALIZAÇÃO AUTOMÁTICA ---
 
 /**
