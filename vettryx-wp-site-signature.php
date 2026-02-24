@@ -72,6 +72,7 @@ add_shortcode('vettryx_developer', function() {
 /**
  * 3. Declaração de conformidade com a API de Consentimento
  */
-add_filter('wp_get_consent_type', function($type) {
-    return $type ? $type : 'not-applicable';
+add_action('plugins_loaded', function() {
+    $plugin_slug = plugin_basename(__FILE__);
+    add_filter("wp_consent_api_registered_{$plugin_slug}", '__return_true');
 });
