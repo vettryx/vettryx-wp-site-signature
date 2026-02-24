@@ -24,9 +24,6 @@ if (file_exists($puc_file)) {
         __FILE__,
         'vettryx-wp-site-signature'
     );
-
-    // Permite baixar o ZIP da Release
-    $myUpdateChecker->getVcsApi()->enableReleaseAssets();
 }
 // --- FIM DA ATUALIZAÇÃO AUTOMÁTICA ---
 
