@@ -3,7 +3,7 @@
  * Plugin Name: VETTRYX WP Site Signature
  * Plugin URI:  https://github.com/VETTRYX-Tech/vettryx-wp-site-signature
  * Description: Solução de branding e copyright dinâmico para clientes VETTRYX Tech.
- * Version:     1.0.0
+ * Version:     1.1.0
  * Author:      VETTRYX Tech
  * Author URI:  https://vettryx.com.br
  * License:     GPLv2
@@ -44,6 +44,7 @@ add_shortcode('vettryx_copyright', function() {
 /**
  * 2. Assinatura do Desenvolvedor (Consome API da VETTRYX)
  * Uso: [vettryx_developer]
+ * * Saída Padrão: Desenvolvido por: VETTRYX Tech
  */
 add_shortcode('vettryx_developer', function() {
     // URL da API da sua empresa
@@ -69,4 +70,11 @@ add_shortcode('vettryx_developer', function() {
 
     // Retorna o link formatado (Você pode ajustar o estilo CSS inline conforme preferir)
     return '<span class="vettryx-signature">Desenvolvido por: <a href="' . esc_url($url_site) . '" target="_blank" rel="noopener">' . esc_html($nome_marca) . '</a></span>';
+});
+
+/**
+ * 3. Declaração de conformidade com a API de Consentimento
+ */
+add_filter('wp_get_consent_type', function($type) {
+    return $type ? $type : 'not-applicable';
 });
