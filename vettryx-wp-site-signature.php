@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: VETTRYX Site Signature
+ * Plugin Name: VETTRYX WP Site Signature
  * Plugin URI:  https://github.com/VETTRYX-Tech/vettryx-wp-site-signature
  * Description: Solução de branding e copyright dinâmico para clientes VETTRYX Tech.
  * Version:     1.0.0
@@ -12,21 +12,20 @@
 if (!defined('ABSPATH')) exit;
 
 // --- INÍCIO DA ATUALIZAÇÃO AUTOMÁTICA (GITHUB) ---
-// Define o caminho exato do arquivo
+// Define o caminho exato do arquivo da biblioteca
 $puc_file = plugin_dir_path(__FILE__) . 'plugin-update-checker/plugin-update-checker.php';
 
-// Só tenta carregar se o arquivo REALMENTE existir
+// Só executa a atualização se a pasta da biblioteca realmente existir
 if (file_exists($puc_file)) {
     require $puc_file;
     
-    use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
-
-    $myUpdateChecker = PucFactory::buildUpdateChecker(
+    $myUpdateChecker = \YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker(
         'https://github.com/VETTRYX-Tech/vettryx-wp-site-signature',
         __FILE__,
         'vettryx-site-signature'
     );
 
+    // Permite baixar o ZIP da Release
     $myUpdateChecker->getVcsApi()->enableReleaseAssets();
 }
 // --- FIM DA ATUALIZAÇÃO AUTOMÁTICA ---
