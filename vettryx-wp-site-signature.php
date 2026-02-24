@@ -3,7 +3,7 @@
  * Plugin Name: VETTRYX WP Site Signature
  * Plugin URI:  https://github.com/VETTRYX-Tech/vettryx-wp-site-signature
  * Description: Solução de branding e copyright dinâmico para clientes VETTRYX Tech.
- * Version:     1.1.0
+ * Version:     1.2.0
  * Author:      VETTRYX Tech
  * Author URI:  https://vettryx.com.br
  * License:     GPLv2
@@ -20,9 +20,9 @@ if (file_exists($puc_file)) {
     require $puc_file;
     
     $myUpdateChecker = \YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker(
-        'https://github.com/VETTRYX-Tech/vettryx-wp-site-signature',
+        'https://github.com/vettryx/vettryx-wp-site-signature',
         __FILE__,
-        'vettryx-site-signature'
+        'vettryx-wp-site-signature'
     );
 
     // Permite baixar o ZIP da Release
