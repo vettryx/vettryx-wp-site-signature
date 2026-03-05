@@ -6,26 +6,10 @@
  * Version:     1.0.0
  * Author:      VETTRYX Tech
  * Author URI:  https://vettryx.com.br
- * License:     GPLv2
+ * License:     GPLv3
  */
 
 if (!defined('ABSPATH')) exit;
-
-// --- INÍCIO DA ATUALIZAÇÃO AUTOMÁTICA (GITHUB) ---
-// Define o caminho exato do arquivo da biblioteca
-$puc_file = plugin_dir_path(__FILE__) . 'plugin-update-checker/plugin-update-checker.php';
-
-// Só executa a atualização se a pasta da biblioteca realmente existir
-if (file_exists($puc_file)) {
-    require $puc_file;
-    
-    $myUpdateChecker = \YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker(
-        'https://github.com/vettryx/vettryx-wp-site-signature',
-        __FILE__,
-        'vettryx-wp-site-signature'
-    );
-}
-// --- FIM DA ATUALIZAÇÃO AUTOMÁTICA ---
 
 /**
  * 1. Copyright Automático
