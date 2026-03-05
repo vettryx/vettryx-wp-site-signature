@@ -1,0 +1,17 @@
+name: Notifica VETTRYX Core
+
+on:
+  release:
+    types: [published] # Dispara automaticamente quando uma nova Release oficial for publicada.
+  workflow_dispatch: # Permite disparar manualmente a partir da aba "Actions" do repositório.
+
+jobs:
+  notify-core:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispara aviso para o Core
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.CORE_REPO_PAT }}
+          repository: vettryx/vettryx-wp-core
+          event-type: update-modules
