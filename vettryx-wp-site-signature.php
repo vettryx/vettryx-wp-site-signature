@@ -1,12 +1,13 @@
 <?php
 /**
  * Plugin Name: VETTRYX WP Site Signature
- * Plugin URI:  https://github.com/vettryx/vettryx-wp-site-signature
+ * Plugin URI:  https://github.com/vettryx/vettryx-wp-core
  * Description: Solução de branding e copyright dinâmico para clientes VETTRYX Tech.
- * Version:     1.1.0
+ * Version:     1.2.0
  * Author:      VETTRYX Tech
  * Author URI:  https://vettryx.com.br
- * License:     GPLv3
+ * License:     Proprietária (Uso Comercial Exclusivo)
+ * Vettryx Icon: dashicons-admin-customizer
  */
 
 // Segurança: Impede o acesso direto ao arquivo
